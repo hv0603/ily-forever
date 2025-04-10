@@ -38,4 +38,25 @@ function createHeart() {
       poem.style.opacity = '1';
     }, 8000);
   });
+
+// Wait for the DOM content to load before running the script
+document.addEventListener('DOMContentLoaded', function () {
+  var audio = document.getElementById('background-music');
+  
+  // Play the audio when the page loads (autoplay)
+  audio.play().catch(function(error) {
+    console.log("Autoplay blocked, please click to start music.", error);
+  });
+
+  // Optionally handle the button click event if you still want it
+  var playButton = document.getElementById('play-music-btn');
+  if (playButton) {
+    playButton.addEventListener('click', function () {
+      audio.play().catch(function(error) {
+        console.log("Error playing audio:", error);
+      });
+    });
+  }
+});
+
   
