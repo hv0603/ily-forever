@@ -90,6 +90,28 @@ body {
     animation: glow 2s ease-in-out infinite alternate;
     transition: opacity 1s ease;
   }
+
+  .body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  }
+
+  .button {
+  background-color: #ff66cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-top: 20px;
+  }
+
+  .button:hover {
+  background-color: #ff3385;
+  }
+
   
   .poem {
     font-size: 1.2em;
