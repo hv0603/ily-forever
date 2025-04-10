@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+  
+  
+  /* Envelope */
+  .envelope {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 12px; /* Rounded corners for smooth edges */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    transition: all 0.4s ease; /* Smooth transition for hover effects */
+    transform: rotate(15deg); /* Slight tilt for a more dynamic look */
+    z-index: 10;
+  }
+  
+  /* Envelope hover effect */
+  .envelope:hover {
+    transform: rotate(0deg) scale(1.05); /* Rotate back to normal and add a small scale */
+  }
+  
+  /* Flap */
+  .flap {
+    position: absolute;
+    top: 0px; /* Flap positioned above the envelope */
+    left: 0;
+    width: 250px;
+    height: 60px;
+    background: #ff6b81;
+    border-radius: 10px;
+    transform-origin: top center;
+    transition: transform 1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow on the flap */
+  }
+  
+  /* Letter Text */
+  .letter-text {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    font-weight: bold;
+    color: #ff6b81;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  /* After opening */
+  .envelope.open .flap {
+    transform: rotateX(-120deg); /* Flap opens to reveal content */
+  }
+  
+  /* Content inside the envelope */
+  .content {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  
+  .photo {
+    max-width: 250px;
+    border-radius: 15px;
+    border: 4px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: opacity 1s ease;
+  }
+  
+  .message {
+    font-size: 1.6em;
+    padding: 0 20px;
+    animation: glow 2s ease-in-out infinite alternate;
+    transition: opacity 1s ease;
+  }
+  
+  .poem {
+    font-size: 1.2em;
+    font-style: italic;
+    color: white;
+    opacity: 0;
+    transition: opacity 2s ease;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+  
+  /* Hide with fade */
+  .hidden {
+    opacity: 0 !important;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #f99;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 40px #ff6;
+    }
+  }
+  
+  /* Hearts */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: floatUp 5s linear infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
