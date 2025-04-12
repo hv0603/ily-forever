@@ -13,6 +13,32 @@ body {
     position: relative;
   }
   
+
+  #playButton {
+    position: fixed;
+    bottom: 20px;  /* distance from bottom */
+    right: 20px;   /* distance from right */
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+
+  #playButton {
+    position: relative;
+    z-index: 10;
+  }  
+  
+  #playButton:hover {
+    background-color: #ff1493;
+  }
+  
   
   /* Envelope */
   .envelope {
@@ -154,4 +180,4 @@ body {
       transform: translateY(-100vh) rotate(45deg);
       opacity: 0;
     }
-  }
+}
