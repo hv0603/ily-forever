@@ -2,17 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday Vidhi 💖</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    
+  #playButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+
+  #playButton:hover {
+    background-color: #ff1493;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio id="background-music">
-    <source src="blue.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+<!-- Audio element -->
+<audio id="birthdayAudio">
+  <source src="blue.mp3" type="audio/mp3" />
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Play button -->
+<button id="playButton">▶ Play Song</button>
+
+<!-- Script placed after elements to ensure everything loads -->
+<script>
+  const playButton = document.getElementById('playButton');
+  const audio = document.getElementById('birthdayAudio');
+
+  playButton.addEventListener('click', () => {
+    audio.play().catch(error => {
+      console.log("Playback failed:", error);
+    });
+  });
+</script>
 
   <!-- Floating Hearts -->
   <div class="heart-container" id="heart-container"></div>
